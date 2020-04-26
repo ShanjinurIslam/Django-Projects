@@ -16,9 +16,7 @@ def snippet_list(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
-        code = request.POST.get('code')
-        data = {'code':str(code)}
-        #data = JSONParser().parse(request) couldn't make it work so had to do manually
+        data = JSONParser().parse(request)
         serializer = SnippetSerializer(data=data)
         if serializer.is_valid():
             serializer.save() # saves to database
