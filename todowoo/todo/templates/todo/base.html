@@ -8,10 +8,14 @@ Logged in as {{user.username}}
   <button type="submit" name="button">Logout</button>
 </form>
 
+<a href="/create">Create</a>
+<a href="/current">Current</a>
+<a href="/completed">Completed</a>
+
 {% else %}
 
 <a href="/signup">Sign Up</a>
-<a href="#">Login</a>
+<a href="/login">Login</a>
 
 {% endif %}
 

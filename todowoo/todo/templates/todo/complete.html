@@ -1,20 +1,19 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-<h1>Current Todos</h1>
+<h1>Completed Todos</h1>
 
 <ul>
 {% for todo in todos %}
 
 <li>
-<a href="{% url 'details' todo.id %}">Details</a>
 {% if todo.important%}
 <b>{{todo.title}}</b>
 {% else %}
 <p>{{todo.title}}</p>
 {% endif %}
 <p>{{todo.memo}}</p>
-<p>{{todo.created}}</p>
+<p>{{todo.datecompleted}}</p>
 </li>
 
 {%endfor%}
